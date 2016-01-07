@@ -1,0 +1,22 @@
+{
+  "name": "kitalimentacao",
+  "version": "1.0.0",
+  "description": "Site Kit Alimentacao",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daiegon/kitalimentacao.git"
+  },
+  "author": "Diego Rangel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daiegon/kitalimentacao/issues"
+  },
+  "homepage": "https://github.com/Daiegon/kitalimentacao#readme",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  }
+}
