@@ -1,0 +1,210 @@
+@import "includes/variaveis.less";  
+@import "includes/fonts.less";   
+
+@font-face {
+    .downtempo;
+    .fontana;
+}
+
+body{ 
+	background: @corAzul;
+	font-size: 100%;
+	font-family: 'downtempo', Arial, sans-serif;
+}
+/*
+.container-fluid{
+  margin: 0 auto;
+  width: 100%;
+}
+*/
+
+header#header{
+	background: #fff;
+	//padding: 20px 0 10px 0;
+
+	nav.navbar{
+		margin-bottom: 0px;
+		.navbar-header{
+			padding: 20px 0 0 0;
+			.navbar-toggle{
+				font-size: 2em;
+				color: @corAzul;
+				margin-top: 20px;
+				padding: 15px 20px;
+				span{
+					margin: 0 0 0 15px;
+				}
+				&:hover{
+					background: #f1f1f1;
+				}
+				&.active{
+					background: @corLaranja;
+					color: #fff;
+				}
+			}
+			.navbar-brand{
+				margin: 0 0 10px 0;
+				width: 200px;
+				height: 94px;
+				background: url('../images/logo-kitalimentacao@0,75x.png') no-repeat center;
+				display: block;
+			}
+		}
+		.navbar-collapse{
+			padding: 0;
+			ul.nav{
+				padding: 0;
+				margin: 0;
+
+				li{
+					a{
+						font-size: 2em;
+						text-transform: uppercase;
+						display: block;
+						padding: 20px 50px;
+					}
+					&.active{
+						border-bottom: 5px solid @corLaranja;
+						background: #f1f1f1;
+					}
+				}
+			}
+
+			ul.menu2{
+				li{
+					a{
+						color: @corLaranja;
+						padding: 15px 50px;
+						span{
+							margin: 0 10px 0 0;
+						}
+					}
+					&.active{
+						background: none;
+						border: none;
+					}
+				}
+
+			}
+		}
+		
+
+		.navbar-form{
+			border-bottom: 2px solid @corAzul;
+			input{
+				font-size: 1.8em;
+				border: none;
+				width: 79%;
+				color: @corAzul;
+				padding: 10px 5px;
+				margin: 0;
+				text-align: center;
+			}
+			button{
+				color: @corAzul;
+				width: 20%;
+				padding: 10px 5px;
+				font-size: 2em;
+				background: none;
+				border: none;
+				&:hover{
+					background-color:#f1f1f1;
+				}
+			}
+		}
+	}
+	
+}
+
+main#content{
+	section.banner{
+		background: url('../images/fundo-home@0,5x.png') center bottom no-repeat;
+		min-height:550px; 
+		text-align: center;
+		position: relative;
+		h2{
+			color:#fff;
+			font-family: 'fontana', Arial, sans-serif;
+			font-size: 7em; 
+			text-shadow:5px 5px 0px darken(@corAzul, 5%);
+			margin-bottom:0; 
+		}
+		span{
+			font-size: 4em;
+			color: #fff;
+		}
+	}
+
+	aside.sidebar{
+		background: #fff;
+		.sidebar-bloco{
+			margin: 10px 0;
+			background-size: contain;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+			transition: background-size 0.5s ;
+			-webkit-transition: background-size 0.5s ease;
+			-o-transition: background-size 0.5s ease;
+			-moz-transition: background-size 0.5s ease; 
+
+			a{	
+				display: block;
+				padding: 2em 0 20em 0;
+				p{
+					font-family: 'fontana', Arial, sans-serif;
+					font-size: 3em;
+					color: #fff;
+					line-height: 1em;
+				}
+				span{
+					font-size: 4em;
+					color: #fff;
+					float: left;
+				}
+
+				&:hover{
+					p, span{
+						color: #000;	
+					}
+					span{
+												
+					}
+
+				}
+			}
+			
+			&.funcionario{
+				background-image: url('../images/sidebar-funcionario@0,75x.png');
+				background-color: @corVerde;
+			}
+
+			&.revenda{
+				background-image: url('../images/sidebar-revenda@0,75x.png');
+				background-color: @corLaranja;
+			}
+
+			&.consumidor{
+				background-image: url('../images/sidebar-consumidor@0,75x.png');
+				background-color: @corAmarela;
+			}
+
+			&:hover{
+				//background-size: 105%;
+				//background-position: center 10px;
+			}
+		}
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+	ul.nav{
+		li{
+			a{
+				font-size: 1.6em !important;
+			}
+		}
+	}
+} 
