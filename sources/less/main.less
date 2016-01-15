@@ -1,5 +1,6 @@
 @import "includes/variaveis.less";  
 @import "includes/fonts.less";   
+@import "includes/mixins.less";   
 
 @font-face {
     .downtempo;
@@ -24,6 +25,7 @@ header#header{
 
 	nav.navbar{
 		margin-bottom: 0px;
+		border: none;
 		.navbar-header{
 			padding: 20px 0 0 0;
 			.navbar-toggle{
@@ -43,19 +45,23 @@ header#header{
 				}
 			}
 			.navbar-brand{
-				margin: 0 0 10px 0;
-				width: 200px;
-				height: 94px;
-				background: url('../images/logo-kitalimentacao@0,75x.png') no-repeat center;
-				display: block;
+				height: 90px;
+				padding: 0;
+				font-size: 0;
+				line-height: 0;
+				h1{
+					text-indent: -9999px;
+					margin: 0 0 10px 0;
+					background-image: url('../images/logo-kitalimentacao@0,75x.png');
+					background-repeat: no-repeat;
+					background-position: center;
+					padding: 25px 0 25px 0;
+					display: block;
+				}
 			}
 		}
 		.navbar-collapse{
-			padding: 0;
 			ul.nav{
-				padding: 0;
-				margin: 0;
-
 				li{
 					a{
 						font-size: 2em;
@@ -71,17 +77,27 @@ header#header{
 			}
 
 			ul.menu2{
+				padding: 0;
 				li{
+					border-bottom: none !important;
 					a{
 						color: @corLaranja;
 						padding: 15px 50px;
+						border-right: 1px solid @corLaranja;
 						span{
 							margin: 0 10px 0 0;
 						}
 					}
 					&.active{
 						background: none;
-						border: none;
+						a{
+							background: #f1f1f1;
+						}
+					}
+					&:last-child{
+						a{
+							border: none;						
+						}
 					}
 				}
 
@@ -91,6 +107,7 @@ header#header{
 
 		.navbar-form{
 			border-bottom: 2px solid @corAzul;
+			padding: 0;
 			input{
 				font-size: 1.8em;
 				border: none;
@@ -136,7 +153,7 @@ main#content{
 	}
 
 	aside.sidebar{
-		background: #fff;
+		background-color: #fff;
 		.sidebar-bloco{
 			margin: 10px 0;
 			background-size: contain;
@@ -164,7 +181,7 @@ main#content{
 
 				&:hover{
 					p, span{
-						color: #000;	
+						color: #fff;	
 					}
 					span{
 												
@@ -176,16 +193,25 @@ main#content{
 			&.funcionario{
 				background-image: url('../images/sidebar-funcionario@0,75x.png');
 				background-color: @corVerde;
+				&:hover{
+					.backgroundDark(@corVerde, 15%); 
+				}
 			}
 
 			&.revenda{
 				background-image: url('../images/sidebar-revenda@0,75x.png');
 				background-color: @corLaranja;
+				&:hover{
+					.backgroundDark(@corLaranja, 15%); 
+				}
 			}
 
 			&.consumidor{
 				background-image: url('../images/sidebar-consumidor@0,75x.png');
 				background-color: @corAmarela;
+				&:hover{
+					.backgroundDark(@corAmarela, 15%); 
+				}
 			}
 
 			&:hover{
@@ -203,8 +229,74 @@ main#content{
 	ul.nav{
 		li{
 			a{
-				font-size: 1.6em !important;
+				font-size: 1.5em !important;
+				padding: 20px 15px !important;
+			}
+		}
+		&.menu{
+			li{
+				a{
+					padding: 40px 15px !important;
+				}
 			}
 		}
 	}
+
+	aside.sidebar{
+		background-color: @corAzul !important;
+	}
+	
+	section.banner{
+		height: 100%;
+		background-image: url('../images/fundo-home@0,75x.png') !important;
+		background-position: bottom !important;
+	}
+
 } 
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.navbar-brand{
+		h1{
+			margin-top: -10px !important;
+			margin-right: -10px !important;
+		}
+	}
+	#row3{
+		.menu{
+			padding: 0 !important;
+			//width: auto;
+		}
+	}
+	#row4{
+		.col-md-4, #busca-md-lg, menu2{
+			padding: 0;
+		}
+	}
+	ul.nav{
+		&.menu{
+			li{
+				a{
+					padding-top: 50px !important;
+				}
+			}
+		}
+		&.menu2{
+			li{
+				padding-top: 10px !important;
+				a{
+					font-size: 1.3em !important;
+					padding: 10px !important
+				}
+			}
+		}
+	}
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
