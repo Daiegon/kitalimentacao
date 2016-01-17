@@ -11,4 +11,11 @@ $(document).ready(function () {
 			$(this).removeClass('active');
 		}
 	});
+	
+	if ($.isSm() || $.isMd() || $.isLg() ) {
+		var bannerHeight = $('#rowContent').height();
+		$('.bannerWrapper').css('height', bannerHeight);
+	}
+	
+	
 });

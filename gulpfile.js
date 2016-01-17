@@ -84,6 +84,7 @@ var args = require('yargs')
 		var src = [
 			'./bower_components/jquery/dist/jquery.min.js',
 			'./bower_components/bootstrap-css/js/bootstrap.min.js',
+			'./bower_components/jquery-breakpoint-check/js/jquery-breakpoint-check.min.js',
 		];
 
 		return gulp.src(src)
