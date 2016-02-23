@@ -13,4 +13,20 @@ form: form-consumidores
 cor: '#f7c72a'
 ---  
 
-{% include formulario.html %}
+
+<div class="construcao col-xs-12">
+	<h3>Estamos desenvolvendo aqui no site...</h3>
+	
+	<div class="hidden-md hidden-lg">
+		<p>Clique no botão abaixo:</p>
+		<a href="intent://send/5521971253619#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end" class="btn btn-lg btn-success" onclick="ga('send', 'event', 'link','click', 'Clicou Falar com o Atendimento');">
+			<i class="fa fa-whatsapp"></i>
+			FALAR COM O ATENDIMENTO
+		</a>
+	</div>
+
+	<div class="hidden-xs hidden-sm">
+		<p>Consulte a tabela pelo Canal 24h no Whatsapp acima</p>
+	</div>	
+</div>
+<!-- /.col-xs-12 construcao -->

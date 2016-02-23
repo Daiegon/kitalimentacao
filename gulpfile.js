@@ -52,6 +52,7 @@ var args = require('yargs')
 		];
 	  return gulp.src(src)
 	    .pipe(concatCss('vendors.css'))
+	  	.pipe(gulpif(isProduction, minifyCSS()))
 	    .pipe(gulp.dest('./assets/css'))
 	});
 
@@ -87,6 +88,7 @@ var args = require('yargs')
 
 		return gulp.src(src)
 	    .pipe(concat('vendors.js'))
+	    .pipe(gulpif(isProduction, uglify()))
 	    .pipe(gulp.dest('./assets/js'))
 	});
 
