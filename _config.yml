@@ -1,0 +1,48 @@
+# Site settings
+baseurl: "" # the subpath of your site, e.g. /blog/
+title: Kit Alimentação - Cesta Básica RJ
+name: Kit Alimentação
+email: contato@kitalimentacao.com.br
+description: > # this means to ignore newlines until "baseurl:"
+  Há 18 anos no mercado, a Kit Alimentação é uma Empresa que se desenvolve no ramo da Cesta Básica. Prezamos pela qualidade dos nossos produtos e na prestação de serviços.
+keywords: > #
+  Cestas Básicas, Produtos de Limpeza, Alimentação Corporativa, Empresa de Alimentos, Cesta básica para Empresas Rj
+url: "http://www.kitalimentacao.com.br/" # the base hostname & protocol for your site
+author: 'Kit Alimentação'
+fixo: "2751-0214"
+whatsapp: "21 97125-3619"
+
+corAzul: '#058db5' 
+corLaranja: '#fc9146'
+corVermelha: '#d91e48'
+corAmarela: '#f7c72a'
+corVerde: '#8fc855'
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+permalink: pretty
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Inicio
+    url: /
+  - title: Empresas
+    url: /empresas/
+  - title: Revenda
+    url: /revenda/
+  - title: Consumidores
+    url: /consumidores/
+
+links-2:
+  - title: Nossa Empresa
+    url: /nossa-empresa/
+    glyphicon: briefcase
+  - title: Fale Conosco
+    url: /contato/
+    glyphicon: earphone
+
+
+#Exclude Files
+exclude: ['Readme.md', 'bower_components', 'node_modules', 'bower.json', 'package.json', 'gulpfile.js', 'sources/']

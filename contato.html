@@ -1,0 +1,73 @@
+---
+layout: default
+title: Fale Conosco
+heading: Fale Conosco
+pagina: contato
+cor: '#d91e48'
+---  
+
+<div class="formulario form-contato col-xs-12 col-md-11 col-md-offset-1">
+	<div class="col-xs-12 form-header">
+		<header>
+			<h4>Ligue pelos Telefones:</h4>	
+			<ul>
+				<li>Central: (21) 2751-0214 / 3755-0295</li>
+				<li>Eliete: (21) 96455-5212</li> 
+				<li>Moreira: (21) 96482-1290</li>
+			</ul>
+		</header>
+	</div>
+	<!-- /.col-xs-12 -->
+	<div class="col-xs-12 form-body">
+		<form name="sentMessage" id="contactForm" novalidate>
+	        <div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>Nome: </label>
+	                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor digite seu nome.">
+	                <p class="help-block text-danger"></p>
+	            </div>
+	        </div>
+	        <div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>Email: </label>
+	                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor informe o Email." >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	        </div>
+	        <div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>Telefone: </label>
+	                <input type="tel" class="form-control" placeholder="Telefone" id="telefone" required data-validation-required-message="Por favor informe o Telefone" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	        </div>
+			<div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>Assunto: </label>
+	                <input type="text" class="form-control" placeholder="Assunto" id="assunto" required data-validation-required-message="Por favor informe o Assunto" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	        </div>
+	        <div class="row control-group">
+	        	<div class="form-group col-xs-12 floating-label-form-group controls">
+		        	<label>Sua Mensagem: </label>
+		                <textarea rows="2" class="form-control" placeholder="Sua mensagem" id="messagem" aria-invalid="false"></textarea>
+		            <div class="help-block"></div>
+		        </div>
+	        </div>
+		
+
+	        <!-- <div class="load">
+	        	<img src="../sources/images/loading.gif" alt=""> 
+	        </div> -->
+
+	        <div class="form-group col-xs-12 text-center">
+	        	<input type="hidden" id="tipo" value="{{page.pagina}}">
+	            <button type="submit" id="cadastro" class="btn btn-lg" onclick="ga('send', 'event', 'link','click', 'Clicou para se Cadastrar');">
+	            Enviar Email
+	            </button>
+	        </div>
+	    </form>	
+	</div> 
+	<!-- /.col-xs-12 -->
+</div>

@@ -23,81 +23,68 @@
 		
 		<div class="container-fluid">
 
-			<div id="row1" class="row">
+			<div class="row">
 
 				<header id="header" class="col-xs-12">
 
 					<nav class="navbar">
 
-						<div id="row2" class="row">
-
-						    <div class="navbar-header col-xs-12 col-sm-3 col-md-2 col-lg-2 col-lg-offset-1">
+						    <div class="navbar-header col-xs-12 col-sm-3 col-md-2 col-lg-2 col-lg-offset-1 text-center">
 								<a class="navbar-brand" href="./" title="Kit Alimentação"><h1>Kit Alimentação</h1></a>
-
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-									MENU <span class="glyphicon glyphicon-menu-hamburger"></span>
-								</button>
 						    </div>
-							<div class="collapse navbar-collapse" id="menu">
-						    	<div id="row3" class="row">
-									<div class="col-xs-12 col-sm-9 col-md-10 col-lg-9">
-										<ul class="nav navbar-nav menu col-sm-12 col-md-8 col-lg-7">
-											<li class="active">
-												<a href="#">Início</a>
-											</li>
-											<li>
-												<a href="#">Para Empresas</a>
-											</li>
-											<li>
-												<a href="#">Para Revenda</a>
-											</li>
-											<li>
-												<a href="#">Para Consumidor</a>
-											</li>
-										</ul>
-										<div id="row4" class="row">
-											<div class="col-md-4">
-												<ul class="nav navbar-nav menu2 col-sm-8 col-sm-push-2 col-md-12 col-md-push-0">
-													<li class="active">
-														<a href="#">
-															<span class="glyphicon glyphicon-briefcase"></span>
-															Nossa Empresa
-														</a>
-													</li>
-													<li>
-														<a href="#">
-															<span class="glyphicon glyphicon-earphone"></span>
-															Fale Conosco
-														</a>
-													</li>
-												</ul>
-												<div id="busca-md-lg" class="col-md-12 hidden-xs">
-													<form class="navbar-form" role="search">
-													 	<input type="text" placeholder="busque na Kit Alimentação">
-														<button class="glyphicon glyphicon-search"></button>
-													</form>	
-												</div>
-												<!-- /.col-xs-12 col-sm-8 -->												
-											</div>
-											<!-- /.col-md-4 -->
-										</div>
-										<!-- /#row4.row -->
-									</div>
-									<!-- /.col-xs-12 col-sm-7 -->
-							    </div>
-							    <!-- /.row 3 -->
-						    </div>
-						    <!-- /.navbar-collapse -->
 
-							<div id="busca-xs-sm" class="col-xs-10 col-xs-offset-1 col-sm-12 col-md-5 hidden-sm hidden-md hidden-lg">
-								<form class="navbar-form" role="search">
-								 	<input type="text" placeholder="busque na Kit Alimentação">
-									<button class="glyphicon glyphicon-search"></button>
-								</form>	
+							<div class="col-xs-12 col-sm-9 col-md-10 col-lg-9 hidden-sm hidden-xs"> 
+								<ul class="nav navbar-nav menu col-sm-12 col-md-8 col-lg-7">
+									<li class="active">
+										<a href="#">Início</a>
+									</li>
+									<li>
+										<a href="#">Para Empresas</a>
+									</li>
+									<li>
+										<a href="#">Para Revenda</a>
+									</li>
+									<li>
+										<a href="#">Para Consumidor</a>
+									</li>
+								</ul>
+								<div class="col-md-4">
+									<ul class="nav navbar-nav menu2 col-sm-8 col-sm-push-2 col-md-12 col-md-push-0">
+										<li class="active">
+											<a href="#">
+												<span class="glyphicon glyphicon-briefcase"></span>
+												Nossa Empresa
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="glyphicon glyphicon-earphone"></span>
+												Fale Conosco
+											</a>
+										</li>
+									</ul>										
+								</div>
+								<!-- /.col-md-4 -->
 							</div>
-							<!-- /.col-xs-12 col-sm-8 -->
-						</div>
-						 <!-- /.row 2 -->
+							<!-- /.col-xs-12 col-sm-7 -->
+							
+							<div class="row">
+								<div class="col-xs-12 menu-btn visible-sm visible-xs">
+									<span class="glyphicon glyphicon-menu-hamburger"></span> MENU
+									<select onchange="location = this.options[this.selectedIndex].value;">
+										<option value="#" selected disabled> - MENU -</option>
+										<option value="./">Início</option>
+										<option value="./">Para Empresas</option>
+										<option value="./">Para Empresas</option>
+										<option value="./">Para Empresas</option>
+										<option value="./">Nossa Empresa</option>
+										<option value="./">Fale Conosco</option>
+									</select>
+								</div>
+								<!-- /.col-xs-12 menu-btn -->
+							</div>
+							<!-- /.row -->
+
 					</nav>
 				</header>
 				<!-- /#header -->

@@ -1,0 +1,231 @@
+aside.sidebar{
+	.sidebar-bloco{
+		margin-bottom: 10px;
+		&.home-bloco{
+			background-size: contain;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+			a{	
+				display: block;
+				padding: 2em 0 20em 0;
+				p{
+					font-family: 'fontana', Arial, sans-serif;
+					font-size: 3em;
+					color: #fff;
+					line-height: 1em;
+				}
+				span{
+					font-size: 4em;
+					color: #fff;
+					float: left;
+				}
+
+				&:hover{
+					p, span{
+						color: #fff;	
+					}
+					span{
+												
+					}
+
+				}
+			}
+
+			&.funcionario{
+				background-image: url('../images/sidebar-funcionario.png');
+				background-color: @corVerde;
+				&:hover{
+					.backgroundDark(@corVerde, 15%); 
+				}
+			}
+
+			&.revenda{
+				background-image: url('../images/sidebar-revenda.png');
+				background-color: @corLaranja;
+				&:hover{
+					.backgroundDark(@corLaranja, 15%); 
+				}
+			}
+
+			&.consumidor{
+				background-image: url('../images/sidebar-consumidor.png');
+				background-color: @corAmarela;
+				&:hover{
+					.backgroundDark(@corAmarela, 15%); 
+				}
+			}
+
+			&:hover{
+			}
+		}
+
+		article{
+			blockquote{
+				border: none;
+				font-size: 3.5em;
+				font-family: 'fontana', Arial, sans-serif;
+				color: @corAmarela;
+				margin:0;
+			}
+			h4{
+				font-family: 'fontana', Arial, sans-serif;
+				color: @corAmarela;
+				font-size: 3em;
+			}
+			p{
+				font-size: 1.8em;
+				color: #fff;
+				text-align: justify;
+			}
+			ul{
+				font-size: 1.8em;
+				color: #fff;
+			}
+		}
+	}
+
+	
+
+	.formulario{
+		min-height: 650px;
+		margin: 0 0 10px 0;
+		.form-header{
+			background: #fff;
+			text-align: center;
+			font-family: 'fontana', Arial, sans-serif;
+			-webkit-border-radius: 10px 10px 0 0;
+			border-radius: 10px 10px 0 0;
+			header{
+				h4{
+					font-size: 4em;
+				}
+				p{
+					font-size: 2em;
+				}
+			}
+		}
+		.form-body{
+			-webkit-border-radius: 0 0 10px 10px;
+			border-radius: 0 0 10px 10px;
+			form{
+				padding: 15px 0;
+				label{
+					color: #fff;
+					font-size: 1.5em;
+				}
+				.form-group{
+					margin-bottom: 0;
+				}
+				.form-control{
+					font-size: 2em !important; 
+				}
+				.help-block{
+					background: red;
+				    color: #fff;
+				    text-align: center;
+				    text-transform: uppercase;
+				    font-size: 1.3em;
+				    ul{
+				    	padding:0;
+				    	list-style: none;
+				    }
+				}
+				.load{
+					display:none;
+				}
+				#cadastro{
+					font-size: 2em;
+					text-transform: uppercase;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		&.form-empresas{
+			.form-header{
+				h4{
+					color: @corVermelha;
+				}
+				p{
+					color: darken(@corVerde, 30%);
+				}
+			}
+			.form-body{
+				background: darken(@corVerde, 30%);
+				#cadastro{
+					background: @corAmarela;
+					color: darken(@corVerde, 30%);
+				}
+			}
+		}
+
+		&.form-revenda{
+			.form-header{
+				h4{
+					color: @corAzul;
+				}
+				p{
+					color: darken(@corLaranja, 30%);
+				}
+			}
+			.form-body{
+				background: darken(@corLaranja, 30%);
+				#cadastro{
+					background: @corAzul;
+					color: #fff;
+				}
+			}
+		}
+
+		&.form-consumidores{
+			.form-header{
+				h4{
+					color: @corAzul;
+				}
+				p{
+					color: darken(@corAmarela, 30%);
+				}
+			}
+			.form-body{
+				background: darken(@corAmarela, 30%);
+				#cadastro{
+					background: @corAzul;
+					color: #fff;
+				}
+			}
+		}
+
+		&.form-contato{
+			.form-header{
+				h4{
+					color: @corAzul;
+				}
+				ul{
+					padding: 0;
+					color: darken(@corVermelha, 30%);
+					li{
+						font-size: 2em;
+						list-style: none;
+					}
+				}
+			}
+			.form-body{
+				background: darken(@corVermelha, 30%);
+				#cadastro{
+					background: @corAzul;
+					color: #fff;
+				}
+			}
+		}
+
+		.politica{
+			color: #fff;
+			font-family: 'fontana', Arial, sans-serif;
+			font-size: 1.5em;
+			a{
+				color: #fff;
+				text-decoration: underline;
+			}
+		}		
+	}
+}

@@ -18,7 +18,8 @@ var gulp = require('gulp'),
 	LessPluginCleanCSS = require('less-plugin-clean-css'),
     LessPluginAutoPrefix = require('less-plugin-autoprefix'),
     cleancss = new LessPluginCleanCSS({ advanced: true }),
-    autoprefix = new LessPluginAutoPrefix({ browsers: ["last 2 versions"] });
+    autoprefix = new LessPluginAutoPrefix({ browsers: ["last 2 versions"] }),
+    shell = require('gulp-shell');
 
 // -- ARGUMENTOS
 var args = require('yargs')
@@ -28,16 +29,8 @@ var args = require('yargs')
 
 	var isProduction = args.production;
 
-// <TASKS>
 
-// --BROWSER SYNC
-	gulp.task('browser-sync', function() {
-	  browserSync({
-	    server: {
-	      baseDir: "./_build"
-	    }
-	  });
-	});
+// <TASKS>
 
 
 
@@ -48,7 +41,7 @@ var args = require('yargs')
 	  return gulp.src('./sources/less/main.less')
 	    .pipe(less())
 	    .pipe(gulpif(isProduction, less({plugins: [autoprefix, cleancss]})))
-	    .pipe(gulp.dest('./_build/sources/css'))
+	    .pipe(gulp.dest('./assets/css'))
 	    .pipe(browserSync.reload({stream:true}))
 	});
 
@@ -59,7 +52,7 @@ var args = require('yargs')
 		];
 	  return gulp.src(src)
 	    .pipe(concatCss('vendors.css'))
-	    .pipe(gulp.dest('./_build/sources/css'))
+	    .pipe(gulp.dest('./assets/css'))
 	});
 
 
@@ -72,10 +65,14 @@ var args = require('yargs')
 
 	// MAIN
 	gulp.task('scripts:main', function() {
-		return gulp.src('./sources/js/*.js')
+		var src = [
+			'./sources/js/main.js',
+			'./sources/js/processaCadastro.js',
+		];
+		return gulp.src(src)
 	    .pipe(concat('app.js'))
 	    .pipe(gulpif(isProduction, uglify()))
-	    .pipe(gulp.dest('./_build/sources/js'))
+	    .pipe(gulp.dest('./assets/js'))
 	    .pipe(browserSync.reload({stream:true}))
 	});
 	
@@ -85,11 +82,12 @@ var args = require('yargs')
 			'./bower_components/jquery/dist/jquery.min.js',
 			'./bower_components/bootstrap-css/js/bootstrap.min.js',
 			'./bower_components/jquery-breakpoint-check/js/jquery-breakpoint-check.min.js',
+			'./sources/js/jqBootstrapValidation.js',
 		];
 
 		return gulp.src(src)
 	    .pipe(concat('vendors.js'))
-	    .pipe(gulp.dest('./_build/sources/js'))
+	    .pipe(gulp.dest('./assets/js'))
 	});
 
 	gulp.task('scripts', ['scripts:main','scripts:vendors']);
@@ -99,13 +97,13 @@ var args = require('yargs')
 // --COPY
 	// IMAGES
 	gulp.task('copy:images', function () {
-	    return gulp.src('./sources/images/**/*.{jpg,png,gif}')
+	    return gulp.src('./sources/images/**/*.{jpg,png,gif,svg}')
 	        .pipe(gulpif(isProduction, imagemin({
 		            progressive: true,
 		            svgoPlugins: [{removeViewBox: false}],
 		            use: [pngquant()]
 	        	})))
-	        .pipe(gulp.dest('./_build/sources/images'));
+	        .pipe(gulp.dest('./assets/images'));
 	});
 
 	// FONTS
@@ -117,24 +115,44 @@ var args = require('yargs')
 		]
 
 	  return gulp.src(src)
-	    .pipe(gulp.dest('./_build/sources/fonts'))
+	    .pipe(gulp.dest('./assets/fonts'))
 	});
 
-	gulp.task('copy', ['copy:images', 'copy:fonts']);
+	// PHP
+	gulp.task('copy:php', function () {
+		return gulp.src('./sources/php/**/*.php')
+	    .pipe(gulp.dest('./assets/php'))
+	});
+
+	gulp.task('copy', ['copy:images', 'copy:fonts', 'copy:php']);
 
 
 // -- HMTL
 	gulp.task('html', function() {
 	  return gulp.src('./sources/html/*.html')
 	  	.pipe(gulpif(isProduction, minifyHTML({collapseWhitespace: true})))
-	    .pipe(gulp.dest('./_build'))
+	    .pipe(gulp.dest('./assets'))
 	    .pipe(browserSync.reload({stream:true}))
 	});
 
+	// Task for building blog when something changed:
+	//gulp.task('jekyll', shell.task(['bundle exec jekyll build --source ./sources/jekyll/ --destination ./build_/']));
+	// Or if you don't use bundle:
+	gulp.task('jekyll', shell.task(['jekyll build --destination ./_build/ --incremental']));
 
 
 
 // * * EXECUÇÃO
+
+	
+	// --BROWSER SYNC
+	gulp.task('browser-sync', ['jekyll'], function() {
+	  browserSync({
+	    server: {
+	      baseDir: "./_build"
+	    }
+	  });
+	});
 
 	// --WATCH
 	gulp.task('watch', function () {
@@ -142,14 +160,16 @@ var args = require('yargs')
 			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 		}
 
-	   gulp.watch('./sources/less/**/*.less', ['styles:main']).on('change',onChange);
-	   gulp.watch('./sources/js/**/*.js', ['scripts:main']).on('change',onChange);
-	   gulp.watch('./sources/images/**/*.{jpg,png,gif}', ['copy:images']).on('change',onChange);
-	   gulp.watch('./sources/html/*.html', ['html']).on('change',onChange);
+	   gulp.watch('./**/*.html', ['jekyll']).on('change', browserSync.reload);
+	   gulp.watch('./sources/less/**/*.less', ['styles:main','jekyll']).on('change',onChange);
+	   gulp.watch('./sources/js/**/*.js', ['scripts:main','jekyll']).on('change',onChange);
+	   gulp.watch('./sources/images/**/*.{jpg,png,gif,svg}', ['copy:images','jekyll']).on('change',onChange);
+	   gulp.watch('./sources/php/**/*.php', ['copy:php','jekyll']).on('change',onChange);
+	   //gulp.watch('./sources/html/*.html', ['html']).on('change',onChange);
 	});
 
 	// --START
-	gulp.task('start', ['browser-sync', 'watch']);
+	gulp.task('start', ['watch', 'browser-sync']);
 
 	// --DEFAULT
-	gulp.task('default', ['styles', 'scripts', 'copy', 'html']);
+	gulp.task('default', ['styles', 'scripts', 'copy']);

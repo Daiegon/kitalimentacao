@@ -1,0 +1,113 @@
+main#content{
+	display: table;
+	table-layout: fixed;
+	height: 100%;
+	width: 100%;
+	background: @corAzul;
+	h2{
+		color:#fff;
+		font-family: 'fontana', Arial, sans-serif;
+		text-shadow:5px 5px 0px darken(@corAzul, 5%);
+		margin:0;
+		padding-top: 20px;
+	} 
+	section.bannerWrapper{
+		height: 350px;
+		padding:0;
+		.banner{
+			text-align: center;
+			background: url('../images/fundo-home.jpg') center bottom no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		h2{
+			font-size: 6em; 
+		}
+		span{
+			font-size: 4em;
+			color: #fff; 
+		}
+	}
+
+	.fullwidth{
+		color:#fff;
+		text-align: justify;
+		padding-bottom: 20px;
+		h2{
+			font-size: 5em;
+			margin-bottom: 10px;
+		}
+		p{
+			font-size: 1.5em;
+		}
+		h3{
+			color: darken(@corAzul, 20%);
+		}
+		.btn-amarelo{
+			background: @corAmarela;
+			color: #000;
+			padding:15px 20px;
+			text-transform: uppercase;
+		}
+	}
+
+	&.empresas{
+		background-color: @corVerde;
+		.banner{
+			background-image: url('../images/fundo-empresas.jpg') !important;
+		}
+		h2{
+			text-shadow:5px 5px 0px darken(@corVerde, 15%) !important;
+		}
+	}
+
+	&.revenda{
+		background-color: @corLaranja;
+		.banner{
+			background-image: url('../images/fundo-revenda.jpg') !important;
+		}
+		h2{
+			text-shadow:5px 5px 0px darken(@corLaranja, 15%) !important;
+		}
+	}
+
+	&.consumidores{
+		background-color: @corAmarela;
+		.banner{
+			background-image: url('../images/fundo-consumidor.jpg') !important;
+		}
+		h2{
+			text-shadow:5px 5px 0px darken(@corAmarela, 15%) !important;
+		}
+	}
+
+	&.default{
+		.bannerWrapper{
+			height: 350px;
+		}
+	}
+
+	&.nossa-empresa{
+		.bannerWrapper{
+			height: 550px;
+			.banner{
+				background-image: url('../images/fundo-nossaempresa.jpg') !important;
+			}
+		}
+	}
+
+	&.contato{
+		background-color: @corVermelha;
+		.banner{
+			background-image: url('../images/fundo-contato.jpg') !important;
+		}
+		h2{
+			text-shadow:5px 5px 0px darken(@corVermelha, 10%) !important;
+		}
+	}
+
+	@import "sidebar.less";
+
+}

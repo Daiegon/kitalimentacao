@@ -1,0 +1,71 @@
+<nav class="navbar">
+ 
+	<div class="navbar-header col-xs-12 col-sm-3 col-md-2 col-lg-2 text-center">
+		<a class="navbar-brand" href="{{site.baseurl}}/" title="Kit Alimentação"><h1>Kit Alimentação</h1></a>
+	</div> 
+	
+	<div class="whatsapp col-xs-12 col-sm-7 hidden-md hidden-lg text-center">
+		<h3>Canal de Atendimento 24h</h3>
+		<p><i class="fa fa-whatsapp"></i> 21 97125-3619</p>
+	</div>
+	<!-- /.col-xs-12 whatsapp -->
+
+	<div class="col-md-10 col-lg-10 hidden-sm hidden-xs"> 
+		<div class="row">
+			<div class="col-md-6 col-lg-5">
+				<ul class="nav navbar-nav menu">
+					{% for link in site.links %}
+						<li class="{% if page.url == {{link.url}} %}active{% endif %}" >
+							<a href="{{ site.baseurl }}{{ link.url }}" title="{{link.title}}">
+								{{link.title}}
+							</a>
+						</li>
+					{% endfor %} 
+				</ul>	
+			</div>
+			<!-- /.nav navbar-nav menu -->
+			<div class="row" id="rowNav2">
+				<div class="col-md-6 col-lg-3">
+					<ul class="nav navbar-nav menu2">
+					{% for link in site.links-2 %}
+						<li class="{% if page.url == {{link.url}} %}active{% endif %}">
+							<a href="{{ site.baseurl }}{{ link.url }}" title="{{link.title}}">
+								<span class="glyphicon glyphicon-{{link.glyphicon}}"></span>
+								{{link.title}}
+							</a>
+						</li>
+					{% endfor %} 
+					</ul>										
+				</div>
+				<!-- /.col-md-4 -->
+				<div class="whatsapp wpp-md col-md-5 col-lg-3 text-center">
+					<h3>Canal de Atendimento 24h</h3>
+					<p><i class="fa fa-whatsapp"></i> {{site.whatsapp}}</p>
+				</div>
+				<!-- /.col-xs-12 whatsapp -->
+				
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.col-xs-12 col-sm-7 -->
+
+	<div class="row">
+		<div class="col-xs-12 menu-btn visible-sm visible-xs">
+			<span class="glyphicon glyphicon-menu-hamburger"></span> MENU
+			<select onchange="location = this.options[this.selectedIndex].value;">
+				<option value="#" selected disabled> - MENU -</option>
+				{% for link in site.links %}
+				<option value="{{ site.baseurl }}{{ link.url }}">{{link.title}}</option>
+				{% endfor %}
+				{% for link in site.links-2 %}
+				<option value="{{ site.baseurl }}{{ link.url }}">{{link.title}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<!-- /.col-xs-12 menu-btn -->
+	</div>
+	<!-- /.row -->
+
+</nav>

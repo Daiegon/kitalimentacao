@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% if page.title %} {{page.title}} | {% endif %} {{site.title}}</title> 
+		<meta name="description" content="{% if page.description %} {{page.description}} {% else %} {{site.description}} {% endif %}">
+		<meta name="keywords" content="{% if page.keywords %} {{page.keywords}} {% else %} {{site.keywords}} {% endif %}">
+		<meta name="autor" content="{{site.author}}">
+  
+		<!-- Vendors CSS -->
+		<link href="{{site.baseurl}}/assets/css/vendors.css" rel="stylesheet"> 
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Style CSS -->
+		<link href="{{site.baseurl}}/assets/css/main.css" rel="stylesheet"> 
+
+		<!-- Android Lolipop Theme Color -->
+    	<meta name="theme-color" content="{{page.cor}}">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		
+		<div class="seta blink col-xs-12 text-center">
+			<span class="glyphicon glyphicon-chevron-down visible-xs"></span>	
+		</div>
+
+		<div class="container-fluid">  
+
+			<div class="row">
+
+				<header id="header" class="col-xs-12">
+					{% include nav.html%}
+				</header>
+				<!-- /#header -->
+			</div>
+			<!-- /.row 1 -->

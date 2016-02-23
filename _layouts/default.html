@@ -1,0 +1,18 @@
+{% include header.html %} 
+			<div id="rowContent" class="row">
+				<main id="content" class="{{page.pagina}}">
+					<section class="bannerWrapper col-xs-12 col-sm-6 col-md-7 col-lg-8">
+						<div class="banner">
+							<h2>{{page.heading}}</h2>						
+						</div>
+					</section>
+					<!-- /.col-xs-12 -->
+					<aside class="sidebar col-xs-12 col-sm-6 col-md-5 col-lg-4">
+						{{content}}
+					</aside>
+					<!-- /#opcoes -->
+				</main>
+				<!-- /#main -->  
+			</div>
+			<!-- /.row -->
+{% include footer.html %} 

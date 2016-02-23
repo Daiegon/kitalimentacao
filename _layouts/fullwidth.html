@@ -1,0 +1,16 @@
+{% include header.html %}
+
+<div id="rowContent" class="row">
+	<main id="content" class="{{page.pagina}}">
+		<section class="fullwidth col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+			<h2 class="text-center">{{page.heading}}</h2>
+			<div class="conteudo col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				{{content}}
+			</div>
+		</section>
+		<!-- /.col-xs-12 -->
+	</main>
+	<!-- /#main -->  
+</div>
+<!-- /.row -->
+{% include footer.html %} 

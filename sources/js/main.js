@@ -13,9 +13,20 @@ $(document).ready(function () {
 	});
 	
 	if ($.isSm() || $.isMd() || $.isLg() ) {
-		var bannerHeight = $('#rowContent').height();
-		$('.bannerWrapper').css('height', bannerHeight);
+		var newHeight = $('#rowContent').height();
+		//window.alert(newHeight);
+		$('.bannerWrapper').css('min-height', newHeight);
 	}
-	
-	
+	function blinker() {
+	    $('.blink').fadeOut(500);
+	    $('.blink').fadeIn(500); 
+	}
+	var intervalo = setInterval(blinker, 1000);
+
+	$(window).scroll(function(){
+	  if($(this).scrollTop() > 100){
+	    $('.seta').fadeOut(500);
+	    clearInterval(intervalo);
+	  }
+	});
 });

@@ -1,0 +1,77 @@
+header#header{
+	background: #fff;
+	//padding: 20px 0 10px 0;
+
+	nav.navbar{
+		margin-bottom: 0px;
+		border: none;
+		.navbar-header{
+			padding: 20px 0;
+			
+			.navbar-brand{
+				height: 90px;
+				width: 100%;
+				display: block;
+				padding: 0;
+				//margin: 0 0 0 30px;
+				text-align: center;
+				h1{
+					text-indent: -9999px;
+					background-image: url('../images/logo-kitalimentacao.jpg');
+					background-repeat: no-repeat;
+					background-position: top center;
+					background-size: contain;
+					padding: 0;
+					margin:0;
+					width: 100%;
+					height: 90px;
+				}
+			}
+		}
+
+		.whatsapp{
+			color: @corWhatsapp;
+			h3{
+				margin-bottom: 0;
+			}
+			i{
+				font-size: 1em;
+			}
+			p{
+				font-size: 2.5em;
+				padding-left: 10px;
+			}
+		}
+		 
+		.menu-btn{
+			padding:15px 0;
+			background: #aaa;
+			color: #fff;
+			text-align: center;
+			position: relative;
+			font-size: 2.5em;
+			span{
+				font-size: 0.7em;
+			}
+			select{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0; 
+				background: none;
+				-webkit-appearance:none;
+			    -moz-appearance:none;
+			    appearance:none;
+			    cursor:pointer;
+			    position: absolute;
+			    border: none;
+				text-indent: -9999px;
+			}
+			&:hover{
+				background-color: darken(#aaa, 30%);
+			}
+		}
+	}
+	
+}
