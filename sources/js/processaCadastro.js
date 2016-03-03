@@ -20,7 +20,15 @@ $(function() {
             var cidade = $("input#cidade").val();
             var telefone = $("input#telefone").val();
             var whatsapp = $("input#whatsapp").val();
+            var assunto = $("input#assunto").val();
+            var msg = $("textarea#msg").val(); 
             var tipo = $("input#tipo").val();
+
+            if(tipo == 'contato'){
+                var urlPHP = '../assets/php/processaEmail.php';
+            } else {
+                var urlPHP = '../assets/php/processaCadastro.php';
+            }
 
             var firstName = nome; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
@@ -28,7 +36,7 @@ $(function() {
                 firstName = nome.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "../assets/php/processaCadastro.php",
+                url: urlPHP,
                 type: "POST",
                 data: {
                     nome : nome,
@@ -37,6 +45,8 @@ $(function() {
                     cidade : cidade,
                     telefone : telefone,
                     whatsapp : whatsapp,
+                    assunto : assunto,
+                    msg : msg,
                     tipo : tipo
                 },
                 cache: false,
@@ -44,26 +54,39 @@ $(function() {
                     //console.log(data);
 
                     $('.load').show();
-                    //$('#cadastro').fadeOut(300);
+                    $('.slideUp').slideUp('fast');
+                    $('.cadastro').hide(300);
                 },
                 success: function(data) {
+                    //window.alert("mensagem: "+msg); 
+
                     console.log(data);
                     if(tipo == 'empresas'){
                         var url = 'http://www.kitalimentacao.com.br/obrigado-empresas/';
                     } else if (tipo == 'revenda') {
                         var url = 'http://www.kitalimentacao.com.br/obrigado-revenda/';
+                    } else {
+                        var url = 'http://www.kitalimentacao.com.br/obrigado-contato/';
                     }
-                    window.setTimeout(redirect(url), 10000);
+                    window.setTimeout(function(){
+                        redirect(url)}
+                    , 3000); 
+
                 },
                 error: function(e) {
                     console.log(e);
+
+                    $('.load').hide();
+                    $('.slideUp').slideDown('fast');
+                    $('.cadastro').fadeIn(300);
+
                     // Fail message
-                    window.alert('Ocorreu um Erro! Tente novamente.');                    
+                    window.alert('Ocorreu um Erro! Tente novamente.');                     
                 },
             })
         },
         filter: function() {
-            return $(this).is(":visible");
+            return $(this).is(":visible"); 
         },
     });
 

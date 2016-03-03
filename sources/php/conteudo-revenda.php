@@ -3,7 +3,7 @@
 <div style="border-left: 10px solid #fc9146; background: #f1f1f1; margin-left: 20px; padding:10px 0 10px 20px;">
 	<h2>Tabela para Revenda</h2>
 	<h3>Kit Alimenta&ccedil;&atilde;o - Cestas B&aacute;sicas RJ</h3>
-	<a href="http://www.kitalimentacao.com.br/tabelarevenda/" title="Tabela para Empresas">
+	<a href="http://app.trakto.io/doc/diegorangels/cestabasicapararevenda/" title="Tabela para Revenda">
 		<strong>&raquo; CLIQUE AQUI</strong>
 	</a> 
 </div>

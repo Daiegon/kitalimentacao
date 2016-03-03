@@ -12,54 +12,57 @@
 	<!-- /.col-xs-12 -->
 	<div class="col-xs-12 form-body">
 		<form name="sentMessage" id="contactForm" novalidate>
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Nome: </label>
-	                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor digite seu nome.">
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        {% if page.url != '/consumidores/' %}
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Email: </label>
-	                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor informe o Email." >
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        {% endif %}
-	        {% if page.url == '/empresas/' %}
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Empresa: </label>
-	                <input type="text" class="form-control" placeholder="Empresa" id="empresa" required data-validation-required-message="Por favor informe a Empresa." >
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        {% endif %}
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Cidade: </label>
-	                <input type="text" class="form-control" placeholder="Cidade" id="cidade" required data-validation-required-message="Por favor informe a Cidade" >
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Telefone Fixo com DDD: </label>
-	                <input type="tel" class="form-control" placeholder="Telefone Fixo com DDD" id="telefone" required data-validation-required-message="Por favor informe o Telefone" >
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        {% if page.url != '/empresas/' %}
-	        <div class="row control-group">
-	            <div class="form-group col-xs-12 floating-label-form-group controls">
-	                <label>Whatsapp com DDD: </label>
-	                <input type="tel" class="form-control" placeholder="Whatsapp com DDD" id="whatsapp" required data-validation-required-message="Por favor informe o WhatsApp" >
-	                <p class="help-block text-danger"></p>
-	            </div>
-	        </div>
-	        {% endif %}
+			<div class="slideUp">
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Nome: </label>
+		                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor digite seu nome.">
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        {% if page.url != '/consumidores/' %}
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Email: </label>
+		                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor informe o Email." >
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        {% endif %}
+		        {% if page.url == '/empresas/' %}
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Empresa: </label>
+		                <input type="text" class="form-control" placeholder="Empresa" id="empresa" required data-validation-required-message="Por favor informe a Empresa." >
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        {% endif %}
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Cidade: </label>
+		                <input type="text" class="form-control" placeholder="Cidade" id="cidade" required data-validation-required-message="Por favor informe a Cidade" >
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Telefone Fixo com DDD: </label>
+		                <input type="tel" class="form-control" placeholder="Telefone Fixo com DDD" id="telefone" required data-validation-required-message="Por favor informe o Telefone" >
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        {% if page.url != '/empresas/' %}
+		        <div class="row control-group">
+		            <div class="form-group col-xs-12 floating-label-form-group controls">
+		                <label>Whatsapp com DDD: </label>
+		                <input type="tel" class="form-control" placeholder="Whatsapp com DDD" id="whatsapp" required data-validation-required-message="Por favor informe o WhatsApp" >
+		                <p class="help-block text-danger"></p>
+		            </div>
+		        </div>
+		        {% endif %}
+			</div>
+			<!-- /.slideUp -->
 
 	        <div class="load col-xs-12 text-center">
 	        	<img src="../assets/images/loading.gif" alt="Carregando"> 
@@ -68,12 +71,15 @@
 	        <div class="form-group col-xs-12 text-center">
 	        	{% if page.url == '/empresas/' %}
 	        	<input type="hidden" id="tipo" value="empresas">
-	        	{% elsif page.url == '/revenda/' %}
-	        	<input type="hidden" id="tipo" value="revenda">
-	        	{% endif %}
-	            <button type="submit" id="cadastro" class="btn btn-lg" onclick="ga('send', 'event', 'link','click', 'Clicou para se Cadastrar');">
+	            <button type="submit" id="cadastro" class="cadastro btn btn-lg" onclick="ga('send', 'event', 'link','click', 'Clicou para se Cadastrar - EMPRESAS');"> 
 	            Receber a Tabela
 	            </button> 
+	        	{% elsif page.url == '/revenda/' %}
+	        	<input type="hidden" id="tipo" value="revenda">
+	        	<button type="submit" id="cadastro" class="cadastro btn btn-lg" onclick="ga('send', 'event', 'link','click', 'Clicou para se Cadastrar - REVENDA');">
+	            Receber a Tabela
+	            </button> 
+	        	{% endif %}
 	        </div>
 
 	        <p class="politica text-center">Estamos comprometidos em resguardar suas informações.
